@@ -1,0 +1,38 @@
+<div class="container-fluid">
+
+<div class="row">
+<div class="col-4">
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Channel</th>
+        <th scope="col">Seasons</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let serie of series">
+        <th scope="row">{{serie.id}}</th>
+        <td (click)="onSelected(serie)">{{serie.name}}</td>
+        <td>{{serie.channel}}</td>
+        <td>{{serie.seasons}}</td>
+      </tr>
+      <tr>
+        Seasosns average: {{promedio}}
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="col"></div>
+
+<div class="col-6" *ngIf="selected">
+  <app-serie-detail [serieDetail]="selectedSerie"></app-serie-detail>
+</div>
+
+</div>
+
+</div>
+
+
